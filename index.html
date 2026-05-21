@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMN DIGITAL – Agence de Communication Digitale</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { font-family: 'Open Sans', sans-serif; color: #222; }
+
+  /* ── NAVBAR ── */
+  nav {
+    background: #003366;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+
+  .nav-icon {
+    width: 38px; height: 38px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .nav-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a.cta {
+    background: #E63946;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 6px;
+  }
+  .nav-links a.cta:hover { background: #c0303c; }
+
+  /* ── HERO ── */
+  .hero {
+    background: #003366;
+    padding: 96px 48px 80px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(230,57,70,0.2);
+    color: #ff8089;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+
+  .hero h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 42px;
+    color: #fff;
+    line-height: 1.15;
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.72);
+    font-size: 16px;
+    max-width: 540px;
+    margin: 0 auto 36px;
+    line-height: 1.8;
+  }
+
+  .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  .btn {
+    background: #E63946;
+    color: #fff;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 15px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: #c0303c; }
+
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    padding: 12px 28px;
+    border: 2px solid rgba(255,255,255,0.4);
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 15px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: #fff; color: #fff; }
+
+  /* ── SECTION HELPER ── */
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .divider {
+    width: 48px; height: 3px;
+    background: #E63946;
+    margin: 0 auto 14px;
+    border-radius: 2px;
+  }
+
+  .section-sub {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  /* ── SERVICES ── */
+  .services { padding: 72px 48px; background: #fff; }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: #F7F9FC;
+    border: 1px solid #D8E2EF;
+    border-radius: 12px;
+    padding: 28px 22px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card:hover { border-color: #003366; transform: translateY(-3px); }
+
+  .card-icon {
+    width: 48px; height: 48px;
+    background: #E8F0FA;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    font-size: 22px;
+    color: #003366;
+  }
+
+  .card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #003366;
+    margin-bottom: 10px;
+  }
+
+  .card p { font-size: 13px; color: #555; line-height: 1.7; }
+
+  /* ── ABOUT ── */
+  .about { background: #F0F4FA; padding: 72px 48px; }
+
+  .about-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+  .about-inner > p { font-size: 15px; color: #444; line-height: 1.85; margin-bottom: 36px; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .stat {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 12px;
+    text-align: center;
+    border: 1px solid #D8E2EF;
+  }
+
+  .stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: #003366;
+  }
+
+  .stat-num span { color: #E63946; }
+  .stat-label { font-size: 12px; color: #666; margin-top: 6px; }
+
+  /* ── WHY US ── */
+  .why { padding: 72px 48px; background: #fff; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .why-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .why-icon {
+    width: 40px; height: 40px;
+    background: #E8F0FA;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: #003366;
+    font-size: 18px;
+  }
+
+  .why-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #003366;
+    margin-bottom: 5px;
+  }
+
+  .why-item p { font-size: 13px; color: #555; line-height: 1.6; }
+
+  /* ── CONTACT ── */
+  .contact { padding: 72px 48px; background: #F7F9FC; }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 40px;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 20px; }
+
+  .contact-item { display: flex; align-items: flex-start; gap: 14px; }
+
+  .contact-item-icon {
+    width: 40px; height: 40px;
+    background: #E8F0FA;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: #003366;
+    font-size: 18px;
+  }
+
+  .contact-item-text p:first-child { font-weight: 600; font-size: 13px; color: #003366; margin-bottom: 3px; }
+  .contact-item-text p:last-child { font-size: 13px; color: #555; }
+
+  .form-group { margin-bottom: 14px; }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #C8D5E8;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    background: #fff;
+    color: #222;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: #003366; }
+
+  .form-group textarea { height: 100px; resize: vertical; }
+
+  .form-btn {
+    width: 100%;
+    background: #003366;
+    color: #fff;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .form-btn:hover { background: #E63946; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #001f4d;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 28px 48px;
+    font-size: 13px;
+  }
+
+  footer strong { color: #E63946; }
+
+  .footer-links { display: flex; justify-content: center; gap: 24px; margin-top: 10px; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 12px; }
+  .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav { padding: 14px 20px; }
+    .hero { padding: 64px 20px 56px; }
+    .hero h2 { font-size: 28px; }
+    .services, .about, .why, .contact { padding: 52px 20px; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .nav-links { gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-icon">
+      <svg width="24" height="24" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="80" height="80" rx="12" fill="#003366"/>
+        <polygon points="54,0 80,0 80,26" fill="#E63946"/>
+        <rect x="8" y="26" width="6" height="28" rx="1.5" fill="#fff"/>
+        <rect x="8" y="48" width="18" height="6" rx="1.5" fill="#fff"/>
+        <rect x="30" y="26" width="6" height="28" rx="1.5" fill="#fff"/>
+        <rect x="50" y="26" width="6" height="28" rx="1.5" fill="#fff"/>
+        <polygon points="30,26 36,26 43,40 50,26 56,26 56,33 43,48 30,33" fill="#fff"/>
+        <rect x="60" y="26" width="6" height="28" rx="1.5" fill="#fff"/>
+        <rect x="74" y="26" width="6" height="28" rx="1.5" fill="#fff"/>
+        <polygon points="60,26 66,26 80,46 80,54 74,54 60,38" fill="#fff"/>
+      </svg>
+    </div>
+    <span class="nav-name">LMN DIGITAL</span>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="cta">Démarrer un projet</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Agence de communication digitale · Abidjan</div>
+  <h2>Boostez votre visibilité digitale</h2>
+  <p>LMN DIGITAL génère des leads qualifiés, développe votre marketing et construit votre réseau pour faire croître votre business durablement.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn">Nous contacter</a>
+    <a href="#services" class="btn-outline">Nos services</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <p class="section-title">Nos Services</p>
+  <div class="divider"></div>
+  <p class="section-sub">Des solutions digitales complètes pour votre croissance</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">&#128200;</div>
+      <h3>Marketing Digital</h3>
+      <p>Stratégie, publicité et acquisition client sur tous les canaux digitaux.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#127775;</div>
+      <h3>Création de Contenu</h3>
+      <p>Visuels, vidéos et branding pour captiver et engager votre audience.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#128101;</div>
+      <h3>Gestion Réseaux Sociaux</h3>
+      <p>Community management et croissance organique sur toutes les plateformes.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#127919;</div>
+      <h3>Génération de Leads</h3>
+      <p>Identification et conversion de prospects qualifiés pour booster vos ventes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-inner">
+    <p class="section-title">À propos de LMN DIGITAL</p>
+    <div class="divider"></div>
+    <p>LMN DIGITAL est une agence spécialisée dans la génération de leads, le marketing digital et le développement de réseau. Nous accompagnons entreprises et entrepreneurs vers leur plein potentiel en Côte d'Ivoire et en Afrique.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num"><span>+</span>200</div>
+        <div class="stat-label">Clients satisfaits</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5 <span>ans</span></div>
+        <div class="stat-label">D'expérience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">98<span>%</span></div>
+        <div class="stat-label">Taux de satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <p class="section-title">Pourquoi nous choisir ?</p>
+  <div class="divider"></div>
+  <p class="section-sub" style="margin-bottom:36px;">Ce qui fait la différence LMN DIGITAL</p>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-icon">&#9889;</div>
+      <div>
+        <h4>Réactivité & Disponibilité</h4>
+        <p>Notre équipe est disponible 6j/7 pour répondre à vos besoins rapidement.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">&#128270;</div>
+      <div>
+        <h4>Stratégie sur mesure</h4>
+        <p>Chaque client bénéficie d'une stratégie personnalisée selon ses objectifs.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">&#128200;</div>
+      <div>
+        <h4>Résultats mesurables</h4>
+        <p>Reporting régulier et KPI clairs pour suivre l'impact de nos actions.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">&#127757;</div>
+      <div>
+        <h4>Expertise locale</h4>
+        <p>Connaissance profonde du marché ivoirien et africain pour des campagnes efficaces.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <p class="section-title">Contactez-nous</p>
+  <div class="divider"></div>
+  <p class="section-sub">Développons votre business ensemble</p>
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-item-icon">&#128222;</div>
+        <div class="contact-item-text">
+          <p>Téléphone</p>
+          <p>+225 05 09 55 48 76</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">&#9993;</div>
+        <div class="contact-item-text">
+          <p>Email</p>
+          <p>contact@lmnlab.ci</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">&#128205;</div>
+        <div class="contact-item-text">
+          <p>Localisation</p>
+          <p>Abidjan, Côte d'Ivoire</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">&#128337;</div>
+        <div class="contact-item-text">
+          <p>Horaires</p>
+          <p>Lun – Sam · 8h à 18h</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="form-group"><input type="text" placeholder="Votre nom complet"></div>
+      <div class="form-group"><input type="email" placeholder="Votre adresse email"></div>
+      <div class="form-group"><input type="tel" placeholder="Votre numéro de téléphone"></div>
+      <div class="form-group"><input type="text" placeholder="Sujet de votre message"></div>
+      <div class="form-group"><textarea placeholder="Décrivez vos besoins et objectifs..."></textarea></div>
+      <button class="form-btn">Envoyer le message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>LMN DIGITAL</strong> · Tous droits réservés · Abidjan, Côte d'Ivoire</p>
+  <p style="font-size:11px; color:rgba(255,255,255,0.35); margin-top:6px; letter-spacing:0.05em;"><em>LMN · Lead Marketing Network</em></p>
+  <div class="footer-links">
+    <a href="#">Mentions légales</a>
+    <a href="#">Politique de confidentialité</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
